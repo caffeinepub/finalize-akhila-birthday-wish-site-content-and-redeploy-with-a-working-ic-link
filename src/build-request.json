@@ -1,0 +1,59 @@
+{
+  "kind": "build_request",
+  "title": "Republish and provide a fresh working shareable link",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Publish/deploy the app to a brand-new Internet Computer canister (do not reuse any previous deployment) and provide the user with the new working public URL to share (must be different from https://caffeine.supply/d/3).",
+      "target": "unknown",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "give link"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A new deployment is created (brand-new canister / new publish target), not reusing any previous deployment.",
+        "A new working URL is produced and shared with the user.",
+        "The new URL is different from https://caffeine.supply/d/3.",
+        "Opening the new URL in a fresh browser session loads the landing page without network errors (e.g., no 'site cannot be reached', no 'CANISTER ID NOT RESOLVED')."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Verify the new deployment supports SPA routing and deep links for both routes \"/\" and \"/celebrate\" (including direct navigation and browser refresh) following the checks in frontend/DEPLOYMENT.md.",
+      "target": "unknown",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "give link"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Direct navigation to the new deployment URL at \"/\" loads the landing page.",
+        "Direct navigation to the new deployment URL at \"/celebrate\" loads the celebration page.",
+        "Refreshing the browser on \"/celebrate\" continues to load the celebration page (no blank screen / no 404).",
+        "Back/forward navigation works between landing and celebration routes.",
+        "Deep-link fallback behavior remains intact (frontend/public/404.html preserves the full URL and frontend/index.html restores it before React mounts)."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not reuse the previously shared/unreachable link https://caffeine.supply/d/3; the user needs a fresh, working link.",
+    "Frontend files in immutablePaths must not be edited (frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui).",
+    "Keep the backend as a single Motoko actor in backend/main.mo; only add migration.mo if a state upgrade is required."
+  ],
+  "nonGoals": [
+    "Adding new product features unrelated to generating and sharing a new working deployment link.",
+    "Changing app routes or content beyond what is necessary to ensure the deployment and deep-link routing work."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

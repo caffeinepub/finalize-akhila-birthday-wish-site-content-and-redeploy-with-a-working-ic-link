@@ -1,0 +1,42 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-publish-deploy-the-app-to-a-brand-new-internet-computer-canister-do-not-reuse-any-previous-deployment-and-provide-the-user-with-the-new-working-public-url-to-share-must-be-different-from-https-caffeine-supply-d-3",
+      "featureTitle": "Publish/deploy the app to a brand-new Internet Computer canister (do not reuse any previous deployment) and provide the user with the new working public URL to share (must be different from https://caffeine.supply/d/3).",
+      "files": [
+        "frontend/DEPLOYED_URL.md",
+        "frontend/DEPLOYMENT.md"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-verify-the-new-deployment-supports-spa-routing-and-deep-links-for-both-routes-and-celebrate-including-direct-navigation-and-browser-refresh-following-the-checks-in-frontend-deployment-md",
+      "featureTitle": "Verify the new deployment supports SPA routing and deep links for both routes \"/\" and \"/celebrate\" (including direct navigation and browser refresh) following the checks in frontend/DEPLOYMENT.md.",
+      "files": [
+        "frontend/DEPLOYMENT.md"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "frontend/src/App.tsx": "Main application component with TanStack Router setup using ROUTES constants from content/routes.ts, wrapped with ThemeProvider and Toaster for proper SPA routing on both / and /celebrate paths.",
+  "frontend/src/pages/LandingPage.tsx": "Landing page component that manages template selection state and renders the selected template variant (A, B, or C) with a template selector and copy link button.",
+  "frontend/src/pages/CelebrationPage.tsx": "Celebration page displaying \"HAPPY BIRTHDAY PUREST SOUL! AKHILAAA\" with heart in heading, unique birthday message ending with \"lovingly yours, BOMMA 🧸\", and shared route constants for back navigation.",
+  "frontend/src/components/landing/LandingTemplateSelector.tsx": "Tab-based selector component allowing users to switch between three landing template variants (Elegant, Playful, Modern).",
+  "frontend/src/components/landing/templates/TemplateVariantA.tsx": "Elegant landing template displaying \"HAPPY BIRTHDAY PUREST SOUL! AKHILAAA\" with heart motif, using shared route constants for navigation.",
+  "frontend/src/components/landing/templates/TemplateVariantB.tsx": "Playful landing template displaying \"HAPPY BIRTHDAY PUREST SOUL! AKHILAAA\" with heart motif, using shared route constants for navigation.",
+  "frontend/src/components/landing/templates/TemplateVariantC.tsx": "Modern split-screen landing template displaying \"HAPPY BIRTHDAY PUREST SOUL! AKHILAAA\" with heart motif, using shared route constants for navigation.",
+  "frontend/src/components/celebration/CelebrationVisuals.tsx": "Component rendering animated balloons, stars, and hearts across the celebration page with reduced-motion support.",
+  "frontend/src/components/celebration/ConfettiCrackerBurst.tsx": "Animated confetti burst effect with cracker image and falling particle animations, respecting reduced-motion preferences.",
+  "frontend/src/components/celebration/usePrefersReducedMotion.ts": "Custom React hook that detects user's prefers-reduced-motion setting and returns boolean state.",
+  "frontend/src/components/CopyLinkButton.tsx": "Reusable button component that copies current URL to clipboard and shows success toast notification.",
+  "frontend/src/content/birthdayMessage.ts": "Unique heartfelt birthday message for Akhila ending with \"lovingly yours, BOMMA 🧸\" as the final line.",
+  "frontend/src/components/GeneratedArt.tsx": "Utility component and constants for referencing generated static artwork assets.",
+  "frontend/src/index.css": "Global styles with OKLCH-based warm coral/peach/gold color system, custom animations, and reduced-motion media queries.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with celebration color tokens, custom fonts (Inter, Playfair Display), and theme utilities.",
+  "frontend/index.html": "HTML entry point with updated title including \"AKHILAAA\", meta description, and path restoration script that recovers the full deep link URL (pathname + search + hash) preserved by 404.html before React mounts.",
+  "frontend/src/hooks/useQueries.ts": "Empty placeholder file as no backend queries are needed for this client-side only application.",
+  "frontend/DEPLOYMENT.md": "Comprehensive deployment verification checklist requiring deployment to a brand-new canister with explicit instructions to avoid reusing previous URLs, including detailed testing steps for direct navigation, deep links, refresh behavior, and back/forward navigation.",
+  "frontend/src/content/routes.ts": "Shared route path constants (LANDING and CELEBRATE) to ensure consistent navigation across all components.",
+  "frontend/public/404.html": "SPA fallback page that preserves the full requested URL (pathname + search + hash) in sessionStorage and redirects to index.html for client-side routing recovery on direct navigation.",
+  "frontend/DEPLOYED_URL.md": "New deployment record file for capturing and sharing the public URL of the latest Internet Computer deployment, with verification checklist and deployment history tracking."
+}

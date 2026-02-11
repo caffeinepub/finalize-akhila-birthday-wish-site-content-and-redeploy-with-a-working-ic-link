@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "New project",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-publish-deploy-the-app-to-a-brand-new-internet-computer-canister-do-not-reuse-any-previous-deployment-and-provide-the-user-with-the-new-working-public-url-to-share-must-be-different-from-https-caffeine-supply-d-3",
+      "title": "Publish/deploy the app to a brand-new Internet Computer canister (do not reuse any previous deployment) and provide the user with the new working public URL to share (must be different from https://caffeine.supply/d/3).",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-verify-the-new-deployment-supports-spa-routing-and-deep-links-for-both-routes-and-celebrate-including-direct-navigation-and-browser-refresh-following-the-checks-in-frontend-deployment-md",
+      "title": "Verify the new deployment supports SPA routing and deep links for both routes \"/\" and \"/celebrate\" (including direct navigation and browser refresh) following the checks in frontend/DEPLOYMENT.md.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [],
+  "projectName": "Republish and provide a fresh working shareable link",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

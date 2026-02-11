@@ -1,0 +1,70 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-11T19:28:30.703Z",
+  "summary": "The diff focuses on documentation and significant frontend UI/content changes, but it does not provide evidence of an actual new Internet Computer deployment (new canister + new public URL) or verification results for routing on the new URL. It also introduces multiple new UI features and content changes that were not requested and conflict with the stated non-goals.",
+  "missing_requirements": [
+    {
+      "id": "REQ-1",
+      "requirement": "Publish/deploy the app to a brand-new Internet Computer canister (do not reuse any previous deployment) and provide the user with the new working public URL to share (must be different from https://caffeine.supply/d/3).",
+      "reason": "The diff only adds/updates documentation placeholders and instructions. It does not contain an actual canister ID, a filled-in deployed URL, or any evidence that a new canister was created and deployed.",
+      "evidence": [
+        "frontend/DEPLOYED_URL.md (URL/Canister ID fields are placeholders: \"[To be filled after deployment]\")",
+        "frontend/DEPLOYMENT.md (describes steps but does not record an executed deployment or resulting URL)"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "requirement": "Verify the new deployment supports SPA routing and deep links for both routes \"/\" and \"/celebrate\" (including direct navigation and browser refresh) following the checks in frontend/DEPLOYMENT.md.",
+      "reason": "While DEPLOYMENT.md contains a verification checklist, there is no evidence in the diff that verification was actually performed against a newly deployed URL (no recorded results/status, no new URL to test).",
+      "evidence": [
+        "frontend/DEPLOYED_URL.md (\"Verification Status\" is a placeholder)",
+        "frontend/DEPLOYMENT.md (checklist/instructions only, no recorded pass/fail against a specific deployed canister)"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Added multiple landing page template variants and a template selector UI (Elegant/Playful/Modern).",
+      "reason": "BuildRequest is focused on redeploying and ensuring routing/deep links work, and explicitly lists adding unrelated product features as a non-goal.",
+      "evidence": [
+        "frontend-file-summaries.txt (LandingTemplateSelector, TemplateVariantA/B/C, LandingPage template selection state)"
+      ]
+    },
+    {
+      "description": "Added celebratory animation/visual effect components (balloons/stars/hearts/confetti burst) and reduced-motion hook.",
+      "reason": "Not requested by REQ-1/REQ-2; constitutes new product/UI functionality beyond deployment/link and routing verification.",
+      "evidence": [
+        "frontend-file-summaries.txt (CelebrationVisuals.tsx, ConfettiCrackerBurst.tsx, usePrefersReducedMotion.ts)"
+      ]
+    },
+    {
+      "description": "Added a Copy Link button with toast notifications.",
+      "reason": "Not requested; unrelated to generating a new deployed canister URL (REQ-1 requires actually providing a new public URL), and is a new UI feature.",
+      "evidence": [
+        "frontend-file-summaries.txt (frontend/src/components/CopyLinkButton.tsx)"
+      ]
+    },
+    {
+      "description": "Changed app content/styling substantially (new birthday message content, new global styles/theme/tailwind config updates).",
+      "reason": "Non-goals prohibit changing app content/routes beyond what’s necessary for deployment and deep-link routing; these are broad content/design changes not evidenced as necessary solely for routing/deployment.",
+      "evidence": [
+        "frontend-file-summaries.txt (birthdayMessage.ts, index.css, tailwind.config.js, CelebrationPage.tsx content changes)"
+      ]
+    },
+    {
+      "description": "Introduced a placeholder queries hook file (useQueries.ts) indicating a client-side-only approach.",
+      "reason": "Not requested in BuildRequest; unrelated to redeployment/link generation and routing verification.",
+      "evidence": [
+        "frontend-file-summaries.txt (frontend/src/hooks/useQueries.ts: \"Empty placeholder file\")"
+      ]
+    }
+  ],
+  "confidence": 0.74,
+  "changed_files": [
+    "frontend-file-summaries.txt",
+    "frontend/DEPLOYED_URL.md",
+    "frontend/DEPLOYMENT.md",
+    "project_state.json"
+  ]
+}

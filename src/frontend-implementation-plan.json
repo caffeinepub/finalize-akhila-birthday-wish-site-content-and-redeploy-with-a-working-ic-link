@@ -1,0 +1,57 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Fresh IC deployment link + SPA deep-link routing verification",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Document and operationalize deploying to a brand-new IC canister and capturing a new shareable public URL (not the previously shared link).",
+      "acceptanceCriteria": [
+        "A new deployment is created (brand-new canister / new publish target), not reusing any previous deployment.",
+        "A new working URL is produced and shared with the user.",
+        "The new URL is different from https://caffeine.supply/d/3.",
+        "Opening the new URL in a fresh browser session loads the landing page without network errors (e.g., no 'site cannot be reached', no 'CANISTER ID NOT RESOLVED')."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/DEPLOYMENT.md",
+          "operation": "modify",
+          "description": "Tighten the 'brand-new canister' deployment checklist to be unambiguous about not reusing prior publish targets, and add a clear 'capture & share the new icp0.io URL' step that explicitly requires the URL to differ from https://caffeine.supply/d/3."
+        },
+        {
+          "path": "frontend/DEPLOYED_URL.md",
+          "operation": "create",
+          "description": "Add a lightweight deployment record file for pasting the newly created public URL (icp0.io) and the verification timestamp, so the shareable link that was actually produced is easy to find and communicate."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Ensure SPA routing deep links work reliably for both \"/\" and \"/celebrate\" via 404 fallback + pre-mount URL restoration, and update verification steps to match frontend/DEPLOYMENT.md checks.",
+      "acceptanceCriteria": [
+        "Direct navigation to the new deployment URL at \"/\" loads the landing page.",
+        "Direct navigation to the new deployment URL at \"/celebrate\" loads the celebration page.",
+        "Refreshing the browser on \"/celebrate\" continues to load the celebration page (no blank screen / no 404).",
+        "Back/forward navigation works between landing and celebration routes.",
+        "Deep-link fallback behavior remains intact (frontend/public/404.html preserves the full URL and frontend/index.html restores it before React mounts)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/404.html",
+          "operation": "modify",
+          "description": "Harden the SPA deep-link fallback so it always preserves the full requested URL (pathname + search + hash) before redirecting to root, ensuring direct loads/refreshes of /celebrate recover correctly after deployment."
+        },
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Confirm and (if needed) refine the pre-React-mount restoration script so it restores the exact full URL saved by 404.html (including pathname + search + hash) before the router initializes, preserving deep-link behavior on refresh."
+        },
+        {
+          "path": "frontend/DEPLOYMENT.md",
+          "operation": "modify",
+          "description": "Align and expand the SPA routing verification section to explicitly test direct navigation, refresh-on-/celebrate, and back/forward behavior for both routes (\"/\" and \"/celebrate\"), and to explicitly confirm 404.html preservation + index.html restoration steps."
+        }
+      ]
+    }
+  ]
+}

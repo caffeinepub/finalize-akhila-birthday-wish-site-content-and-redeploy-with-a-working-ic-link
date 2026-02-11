@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting...</title>
+  <script>
+    // SPA fallback: preserve the full requested URL (pathname + search + hash) and redirect to index.html
+    // This allows the client-side router to handle deep links with full URL restoration
+    (function() {
+      var path = window.location.pathname;
+      var search = window.location.search;
+      var hash = window.location.hash;
+      
+      if (path && path !== '/') {
+        var fullPath = path + search + hash;
+        sessionStorage.setItem('redirectPath', fullPath);
+      }
+      window.location.replace('/');
+    })();
+  </script>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
+</html>

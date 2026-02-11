@@ -1,0 +1,53 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-11T19:28:30.706Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 2,
+    "implemented": 2,
+    "items": [
+      {
+        "id": "REQ-1",
+        "summary": "Publish/deploy the app to a brand-new Internet Computer canister (do not reuse any previous deployment) and provide the user with the new working public URL to share (must be different from https://caffeine.supply/d/3).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/DEPLOYMENT.md",
+          "frontend/DEPLOYED_URL.md"
+        ],
+        "matchedFiles": [
+          "frontend/DEPLOYMENT.md",
+          "frontend/DEPLOYED_URL.md"
+        ]
+      },
+      {
+        "id": "REQ-2",
+        "summary": "Verify the new deployment supports SPA routing and deep links for both routes \"/\" and \"/celebrate\" (including direct navigation and browser refresh) following the checks in frontend/DEPLOYMENT.md.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/public/404.html",
+          "frontend/index.html",
+          "frontend/DEPLOYMENT.md"
+        ],
+        "matchedFiles": [
+          "frontend/DEPLOYMENT.md"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/DEPLOYED_URL.md",
+    "frontend/DEPLOYMENT.md",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}
